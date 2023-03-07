@@ -12,7 +12,7 @@ node {
 	
 	stage('Unit Testing') {
       sh 'mvn test'
-junit '/var/lib/jenkins/workspace/dev/target/surefire-reports/TEST-com.javapackage.JavaTest.xml'
+junit '/var/lib/jenkins/workspace/dev/target/surefire-reports/*.xml'
    }	
 	
 	
