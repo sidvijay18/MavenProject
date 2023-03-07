@@ -1,16 +1,16 @@
 node {
 	//def server = Artifactory.server 'artifactory' 
-    def rtMaven = Artifactory.newMavenBuild()
+    //def rtMaven = Artifactory.newMavenBuild()
     //def buildInfo
     //def mvnHome
-    jdk = tool name: 'JAVA8'
-    env.JAVA_HOME = "${jdk}"
+   // jdk = tool name: 'JAVA8'
+   // env.JAVA_HOME = "${jdk}"
     
    stage ('Code Checkout') {			
 	git branch: 'master', url: "https://github.com/ChiragMakkar13/MavenProject.git"
 		}
 	stage (' Code Build') {
-	    rtMaven.run pom: 'pom.xml', goals: 'clean install', buildInfo: buildInfo
+	    sh 'mvn package'
     }
    
 	//stage('SonarQube analysis') {
