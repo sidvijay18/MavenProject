@@ -9,6 +9,10 @@ node {
    stage ('Code Checkout') {			
 	git branch: 'master', url: "https://github.com/ChiragMakkar13/MavenProject.git"
 		}
+	
+	stage('Unit Testing') {
+      junit '**/target/surefire-reports/TEST-*.xml'
+   }	
 	stage (' Code Build') {
 	    sh 'mvn package'
     }
@@ -19,9 +23,7 @@ node {
         //rtMaven.run pom: 'pom.xml', goals: '$SONAR_MAVEN_GOAL -Dsonar.host.url=$SONAR_HOST_URL', buildInfo: buildInfo
 	//	}
 //	}
-	stage('Unit Testing') {
-      junit '**/target/surefire-reports/TEST-*.xml'
-   }	
+	
  
 	
 	//stage('Docker Image Build'){
