@@ -11,7 +11,7 @@ node {
 		}
 	
 	stage('Unit Testing') {
-      junit '**/target/surefire-reports/TEST-*.xml'
+      sh 'mvn test'
    }	
 	stage (' Code Build') {
 	    sh 'mvn package'
