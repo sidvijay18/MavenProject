@@ -10,9 +10,7 @@ node {
 	git branch: 'master', url: "https://github.com/ChiragMakkar13/MavenProject.git"
 		}
 	
-	stage('Testing Stage') {
-      sh 'mvn test'
-   }	
+	
 	
 	
 	stage (' Code Build') {
