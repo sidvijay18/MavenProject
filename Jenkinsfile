@@ -15,9 +15,7 @@ node {
    }	
 	
 	
-	stage (' Code Build') {
-	    sh 'mvn package'
-    }
+	
    
 	stage (' Hello') {
 	   echo 'hello world'
