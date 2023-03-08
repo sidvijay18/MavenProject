@@ -19,6 +19,11 @@ node {
 	    sh 'mvn package'
     }
    
+	stage (' Hello') {
+	   echo 'hello world'
+    }
+	
+	
 	//stage('SonarQube analysis') {
         //mvnHome = tool 'mavenhome'
 	//	withSonarQubeEnv('sonar') {
